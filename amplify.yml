@@ -1,0 +1,21 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        # Expo SDK 58 / React Native 0.88 exigem Node ^22.13 ou superior.
+        - nvm install 22
+        - nvm use 22
+        - node -v
+        - npm ci
+    build:
+      commands:
+        # web.output = "single" (app.json): gera um SPA em dist/ com um único index.html.
+        - npx expo export --platform web
+  artifacts:
+    baseDirectory: dist
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
