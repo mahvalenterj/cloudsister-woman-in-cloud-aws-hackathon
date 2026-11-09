@@ -1,0 +1,37 @@
+{
+  "origem": "hipotese-mock",
+  "acolhimentoPorPreocupacao": {
+    "jovem-nao-sou-boa": "Boa o bastante para começar? Você já está aqui aprendendo, e é assim que todo mundo da área começou.",
+    "jovem-medo-de-errar": "Errar faz parte de aprender, e aqui você pode errar à vontade, sem consequência nenhuma.",
+    "jovem-siglas": "Sigla assusta no começo, mas cada uma é só um nome para uma ideia simples. Vamos uma de cada vez.",
+    "jovem-todo-mundo-sabe-mais": "Quem parece saber tudo também já começou do zero. Comparar o seu começo com o meio dos outros não é justo com você.",
+    "madura-recomeco": "Recomeçar numa área nova é uma escolha corajosa, e você não chega vazia: traz tudo o que já viveu no trabalho.",
+    "madura-pouco-tempo": "Pouco tempo pede passos pequenos. Essa pílula cabe em poucos minutos, e isso já conta.",
+    "madura-o-que-ja-sei": "O que você já sabe vale, sim. Organização, responsabilidade e olhar para custo e risco são exatamente o que a cloud pede.",
+    "madura-atrasada": "Atrasada para quê? A cloud segue crescendo e precisa de gente de vários caminhos. Dá tempo, e você já começou."
+  },
+  "momentos": {
+    "18-34": {
+      "abertura": { "ponte": "Vem comigo, que eu te explico o conceito de hoje:" },
+      "erro": { "ponte": "Quase! Isso acontece com todo mundo no começo. Olha o que a AWS diz:" },
+      "fechamento": { "ponte": "Pílula concluída! Um passo a mais na sua jornada. Para guardar:" }
+    },
+    "35-50": {
+      "abertura": { "ponte": "Vamos ao conceito de hoje, sem pressa:" },
+      "erro": { "ponte": "Sem problema, errar ajuda a fixar. Veja o que diz a AWS:" },
+      "fechamento": { "ponte": "Pílula concluída! Cada pílula soma no seu ritmo. Para guardar:" }
+    }
+  },
+  "generico": {
+    "18-34": {
+      "abertura": "Estou aqui com você. Vamos ao conceito de hoje, um passo de cada vez.",
+      "erro": "Tudo bem errar, é assim que a gente aprende. Releia o conceito e tente de novo.",
+      "fechamento": "Pílula concluída! Você está avançando."
+    },
+    "35-50": {
+      "abertura": "Estou aqui com você. Vamos ao conceito de hoje, no seu ritmo.",
+      "erro": "Sem problema, errar faz parte. Releia o conceito e tente de novo.",
+      "fechamento": "Pílula concluída! Você está avançando no seu ritmo."
+    }
+  }
+}

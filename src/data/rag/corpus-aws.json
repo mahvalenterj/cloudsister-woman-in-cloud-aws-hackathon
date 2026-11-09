@@ -1,0 +1,262 @@
+[
+  {
+    "id": "aws-cloud-definicao",
+    "fonte": {
+      "titulo": "What is cloud computing? (AWS Overview)",
+      "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/what-is-cloud-computing.html"
+    },
+    "tags": ["conceito-cloud", "pague-pelo-uso", "custo", "iniciante"],
+    "texto": "Cloud computing é a entrega sob demanda de poder de computação, bancos de dados, armazenamento e outros recursos de TI pela internet, com preço por uso. Você não precisa fazer grandes investimentos iniciais em hardware nem gastar tempo cuidando dele: provisiona só o tipo e o tamanho de recurso de que precisa e paga apenas pelo que usa.",
+    "pilulaIds": ["ca-01"]
+  },
+  {
+    "id": "aws-cloud-eletricidade",
+    "fonte": {
+      "titulo": "AWS overview",
+      "url": "https://docs.aws.amazon.com/whitepapers/latest/overview-oracle-e-business-suite/aws-overview.html"
+    },
+    "tags": ["conceito-cloud", "pague-pelo-uso", "custo", "iniciante"],
+    "texto": "Usar recursos da AWS é como comprar energia de uma companhia elétrica em vez de manter o próprio gerador: a capacidade que você recebe corresponde exatamente à sua necessidade, você paga só pelo que usa, a escala reduz custos e o serviço é operado por quem tem experiência em rodar sistemas grandes.",
+    "pilulaIds": ["ca-01"]
+  },
+  {
+    "id": "aws-regioes-az",
+    "fonte": {
+      "titulo": "Amazon Web Services concepts",
+      "url": "https://docs.aws.amazon.com/whitepapers/latest/overview-oracle-e-business-suite/amazon-web-services-concepts.html"
+    },
+    "tags": ["regioes", "zonas-de-disponibilidade", "infraestrutura-global", "iniciante"],
+    "texto": "Cada Região é uma área geográfica separada e isolada das outras. Os recursos não são replicados entre Regiões, a menos que você configure isso. Você escolhe a Região conforme sua necessidade, por exemplo para ficar mais perto dos clientes ou para cumprir exigências legais. Cada Região tem várias Zonas de Disponibilidade, que rodam em infraestrutura física própria e independente, sem compartilhar pontos comuns de falha como geradores e refrigeração.",
+    "pilulaIds": ["ca-01"]
+  },
+  {
+    "id": "aws-regioes-minimo-3-az",
+    "fonte": {
+      "titulo": "Global Infrastructure Regions & AZs",
+      "url": "https://aws.amazon.com/about-aws/global-infrastructure/regions_az/"
+    },
+    "tags": ["regioes", "zonas-de-disponibilidade", "alta-disponibilidade", "iniciante"],
+    "texto": "Cada Região da AWS tem no mínimo três Zonas de Disponibilidade isoladas e fisicamente separadas. Cada uma tem energia, refrigeração e segurança física independentes, conectadas por redes redundantes de baixa latência. Quem busca alta disponibilidade pode desenhar a aplicação para rodar em mais de uma Zona e ter mais tolerância a falhas.",
+    "pilulaIds": ["ca-01"]
+  },
+  {
+    "id": "aws-modelos-iaas-paas-saas",
+    "fonte": {
+      "titulo": "SaaS vs PaaS vs IaaS – Types of Cloud Computing",
+      "url": "https://aws.amazon.com/types-of-cloud-computing/"
+    },
+    "tags": ["conceito-cloud", "iaas", "paas", "saas", "iniciante"],
+    "texto": "Há três modelos principais. IaaS oferece os blocos básicos de TI (rede, computadores e armazenamento) com o maior nível de flexibilidade e controle. PaaS tira de você a gestão da infraestrutura subjacente, para focar na aplicação, sem se preocupar com compra de recursos, planejamento de capacidade ou atualizações. SaaS são aplicativos operados e mantidos pelo fornecedor; um exemplo comum é o e-mail na web, em que você usa o software sem cuidar de servidores.",
+    "pilulaIds": ["ca-01"]
+  },
+  {
+    "id": "aws-responsabilidade-compartilhada",
+    "fonte": {
+      "titulo": "Shared Security Responsibility Model",
+      "url": "https://docs.aws.amazon.com/whitepapers/latest/navigating-gdpr-compliance/shared-security-responsibility-model.html"
+    },
+    "tags": ["responsabilidade-compartilhada", "seguranca-da-nuvem", "seguranca-na-nuvem", "iniciante"],
+    "texto": "A AWS é responsável pela segurança DA nuvem: proteger a infraestrutura que roda os serviços, como data centers, redes, hardware e o software de base. O cliente é responsável pela segurança NA nuvem: configurar e gerenciar a segurança dos serviços que usa, o que inclui controlar o acesso de usuários, criptografar dados e configurar monitoramento.",
+    "pilulaIds": ["cs-01"]
+  },
+  {
+    "id": "aws-responsabilidade-cliente-itens",
+    "fonte": {
+      "titulo": "Improving Security in the Cloud with Micro-Segmentation (AWS Partner Network Blog)",
+      "url": "https://aws.amazon.com/blogs/apn/improving-security-in-the-cloud-with-micro-segmentation/"
+    },
+    "tags": ["responsabilidade-compartilhada", "seguranca-da-nuvem", "seguranca-na-nuvem", "iniciante"],
+    "texto": "A AWS protege o que entrega como plataforma: data centers físicos, hypervisors, switches, roteadores e armazenamento. O cliente protege a sua parte da nuvem, o que inclui seus dados, sistemas operacionais, aplicações, firewalls, autenticação e gerenciamento de acesso.",
+    "pilulaIds": ["cs-01"]
+  },
+  {
+    "id": "aws-cia-cliente",
+    "fonte": {
+      "titulo": "Security and compliance (AWS whitepaper)",
+      "url": "https://docs.aws.amazon.com/whitepapers/latest/migrating-magento-open-source-adobe-commerce-to-aws/security-and-compliance.html"
+    },
+    "tags": ["cia", "confidencialidade", "integridade", "disponibilidade", "responsabilidade-compartilhada", "iniciante"],
+    "texto": "Os clientes da AWS são responsáveis por proteger a confidencialidade, a integridade e a disponibilidade dos seus dados na nuvem e por atender seus requisitos de negócio para proteção da informação. De forma simples: a AWS cuida da segurança da nuvem e o cliente cuida da segurança na nuvem. Security groups funcionam como firewall virtual em volta das instâncias EC2, com regras para o tráfego de entrada e saída.",
+    "pilulaIds": ["cs-01"]
+  },
+  {
+    "id": "aws-integridade-fisica-logica",
+    "fonte": {
+      "titulo": "What is Data Integrity?",
+      "url": "https://aws.amazon.com/what-is/data-integrity/"
+    },
+    "tags": ["cia", "integridade", "responsabilidade-compartilhada", "iniciante"],
+    "texto": "Na nuvem, a integridade física dos dados (proteção contra desastres, falta de energia e falha de hardware) é gerenciada pelo provedor, conforme o modelo de responsabilidade compartilhada. Já a integridade lógica, que garante que os dados sigam as regras do sistema onde ficam, e a qualidade dos dados são responsabilidade de quem usa a nuvem.",
+    "pilulaIds": ["cs-01"]
+  },
+  {
+    "id": "aws-ec2-s3-rds",
+    "fonte": {
+      "titulo": "Cloud Computing Solutions for Life Sciences (Service Spotlight)",
+      "url": "https://aws.amazon.com/health/life-sciences/"
+    },
+    "tags": ["ec2", "s3", "rds", "servicos-essenciais"],
+    "texto": "O Amazon EC2 oferece computação segura e redimensionável na nuvem. O Amazon S3 é armazenamento de objetos com escalabilidade, disponibilidade e segurança. O Amazon RDS automatiza tarefas de gestão de banco de dados que não agregam diferencial, como provisionamento, configuração, backup e aplicação de patches.",
+    "pilulaIds": ["ca-02"]
+  },
+  {
+    "id": "aws-rds-gerenciado",
+    "fonte": {
+      "titulo": "Database configuration, backup, and failover",
+      "url": "https://docs.aws.amazon.com/whitepapers/latest/web-application-hosting-best-practices/database-configuration-backup-and-failover.html"
+    },
+    "tags": ["rds", "ec2", "servicos-essenciais", "responsabilidade-compartilhada"],
+    "texto": "Além do Amazon RDS, que é gerenciado, você pode instalar o seu banco de dados em uma instância EC2 e cuidar dele por conta própria. Com o RDS, o serviço gerencia o próprio armazenamento e você pode se concentrar nos seus dados.",
+    "pilulaIds": ["ca-02"]
+  },
+  {
+    "id": "aws-well-architected-pilares",
+    "fonte": {
+      "titulo": "The pillars of the framework (AWS Well-Architected)",
+      "url": "https://docs.aws.amazon.com/wellarchitected/2025-02-25/framework/the-pillars-of-the-framework.html"
+    },
+    "tags": ["well-architected", "pilares", "custo"],
+    "texto": "Criar um sistema de software é como construir um prédio: se a fundação não é sólida, surgem problemas estruturais. Os seis pilares do Well-Architected são excelência operacional, segurança, confiabilidade, eficiência de performance, otimização de custos e sustentabilidade. Incorporá-los ajuda a produzir sistemas estáveis e eficientes.",
+    "pilulaIds": ["ca-02"]
+  },
+  {
+    "id": "aws-well-architected-ferramenta",
+    "fonte": {
+      "titulo": "Are you Well-Architected? (AWS whitepaper)",
+      "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-best-practices-ddos-resiliency/are-you-well-architected.html"
+    },
+    "tags": ["well-architected", "pilares", "iniciante"],
+    "texto": "O Well-Architected Framework ajuda a entender os prós e contras das decisões ao construir sistemas na nuvem. Com a AWS Well-Architected Tool, disponível sem custo no Console, você revisa suas cargas de trabalho respondendo a perguntas de cada pilar.",
+    "pilulaIds": ["ca-02"]
+  },
+  {
+    "id": "aws-asg-multi-az",
+    "fonte": {
+      "titulo": "Resilience in Amazon EC2 Auto Scaling",
+      "url": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/disaster-recovery-resiliency.html"
+    },
+    "tags": ["alta-disponibilidade", "zonas-de-disponibilidade", "auto-scaling", "balanceador"],
+    "texto": "Para aproveitar a redundância geográfica das Zonas de Disponibilidade, distribua o Auto Scaling group por várias Zonas e coloque um load balancer para repartir o tráfego entre elas. Se uma instância falhar na verificação de saúde, o Elastic Load Balancing para de enviar tráfego a ela e o EC2 Auto Scaling a substitui.",
+    "pilulaIds": ["ca-03"]
+  },
+  {
+    "id": "aws-asg-escala-com-demanda",
+    "fonte": {
+      "titulo": "Resilience in Amazon EC2 Auto Scaling",
+      "url": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/disaster-recovery-resiliency.html"
+    },
+    "tags": ["auto-scaling", "escalabilidade", "pague-pelo-uso", "custo"],
+    "texto": "O EC2 Auto Scaling verifica a saúde das instâncias: quando uma fica com problema, ele a encerra e inicia outra. Com políticas de escala dinâmica, a capacidade acompanha o tráfego que chega.",
+    "pilulaIds": ["ca-03"]
+  },
+  {
+    "id": "aws-asg-falha-de-az",
+    "fonte": {
+      "titulo": "Add an Availability Zone (EC2 Auto Scaling)",
+      "url": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-add-az-console.html"
+    },
+    "tags": ["alta-disponibilidade", "zonas-de-disponibilidade", "infraestrutura-global", "auto-scaling"],
+    "texto": "Quando uma Zona de Disponibilidade fica indisponível, o EC2 Auto Scaling inicia novas instâncias em uma Zona que não foi afetada. Quando a Zona volta ao normal, ele redistribui as instâncias de forma equilibrada entre todas.",
+    "pilulaIds": ["ca-03"]
+  },
+  {
+    "id": "aws-asg-faq-balanceamento",
+    "fonte": {
+      "titulo": "Amazon EC2 Auto Scaling FAQs",
+      "url": "https://aws.amazon.com/ec2/autoscaling/faqs/"
+    },
+    "tags": ["alta-disponibilidade", "zonas-de-disponibilidade", "auto-scaling", "iniciante"],
+    "texto": "Equilibrar os recursos entre Zonas de Disponibilidade é uma boa prática de arquiteturas bem desenhadas, porque aumenta bastante a disponibilidade do conjunto. O EC2 Auto Scaling faz esse balanceamento sozinho quando você configura várias Zonas no grupo.",
+    "pilulaIds": ["ca-03"]
+  },
+  {
+    "id": "aws-iam-menor-privilegio",
+    "fonte": {
+      "titulo": "AWS Identity and Access Management (IAM) Best Practices",
+      "url": "https://aws.amazon.com/iam/resources/best-practices/"
+    },
+    "tags": ["iam", "menor-privilegio", "responsabilidade-compartilhada"],
+    "texto": "Ao definir permissões no IAM, conceda apenas as permissões específicas necessárias para cada tarefa, o chamado menor privilégio. Você pode começar com permissões amplas enquanto descobre o que a carga de trabalho exige e depois ir reduzindo. Revise com regularidade e remova usuários, funções e permissões que não são mais usados.",
+    "pilulaIds": ["cs-02"]
+  },
+  {
+    "id": "aws-iam-auditar-e-mfa",
+    "fonte": {
+      "titulo": "What are the best practices to secure my AWS account and its resources?",
+      "url": "https://repost.aws/knowledge-center/security-best-practices"
+    },
+    "tags": ["iam", "mfa", "menor-privilegio", "iniciante"],
+    "texto": "Verifique se os usuários do IAM têm as políticas mais restritivas possíveis, só com o suficiente para suas tarefas, e audite usuários, permissões e credenciais sem uso com frequência. Configure um dispositivo de MFA individual para cada usuário do IAM que acessa o console.",
+    "pilulaIds": ["cs-02"]
+  },
+  {
+    "id": "aws-cripto-em-repouso-kms",
+    "fonte": {
+      "titulo": "How US federal agencies can use AWS to encrypt data at rest and in transit (AWS Security Blog)",
+      "url": "https://aws.amazon.com/blogs/security/how-us-federal-agencies-can-use-aws-to-encrypt-data-at-rest-and-in-transit/"
+    },
+    "tags": ["criptografia", "kms", "em-repouso", "responsabilidade-compartilhada"],
+    "texto": "Dados em repouso são os que ficam gravados em armazenamento não volátil: blocos, objetos, bancos de dados e arquivos. O AWS KMS oferece um jeito simples de gerenciar as chaves da criptografia em repouso e se integra a vários serviços da AWS. O uso das chaves é registrado no AWS CloudTrail, o que dá uma visão independente de quem acessou os dados criptografados.",
+    "pilulaIds": ["cs-02"]
+  },
+  {
+    "id": "aws-cripto-transito-tls",
+    "fonte": {
+      "titulo": "Simple cloud security best practices that protect SMB data",
+      "url": "https://aws.amazon.com/smart-business/resources-for-smb/cloud-security-best-practices/"
+    },
+    "tags": ["criptografia", "kms", "tls", "em-transito", "iniciante"],
+    "texto": "A criptografia impede que pessoas não autorizadas leiam seus dados, tanto guardados (em repouso) quanto em movimento entre sistemas (em trânsito). O Amazon S3 criptografa novos objetos por padrão; se você precisar de mais controle, como rotação de chaves, use SSE-KMS. Para dados em trânsito, exija HTTPS/TLS em sites, APIs e endpoints internos.",
+    "pilulaIds": ["cs-02"]
+  },
+  {
+    "id": "aws-cloudtrail-registra",
+    "fonte": {
+      "titulo": "AWS CloudTrail – Capture AWS API Activity (AWS News Blog)",
+      "url": "https://aws.amazon.com/blogs/aws/aws-cloudtrail-capture-aws-api-activity/"
+    },
+    "tags": ["cloudtrail", "monitoramento", "logs", "iniciante"],
+    "texto": "O AWS CloudTrail registra as chamadas feitas às APIs da AWS pelo Console, pela linha de comando, pelas suas aplicações e por softwares de terceiros, e grava os logs em um bucket S3 da sua escolha. O histórico ajuda em conformidade, em rastrear um recurso da criação à exclusão e em análises de segurança.",
+    "pilulaIds": ["cs-03"]
+  },
+  {
+    "id": "aws-cloudtrail-perguntas",
+    "fonte": {
+      "titulo": "AWS CloudTrail – Capture AWS API Activity (AWS News Blog)",
+      "url": "https://aws.amazon.com/blogs/aws/aws-cloudtrail-capture-aws-api-activity/"
+    },
+    "tags": ["cloudtrail", "monitoramento", "logs", "incidente"],
+    "texto": "Os dados do CloudTrail ajudam a responder perguntas como: que ações um usuário fez em determinado período, quem agiu sobre um recurso e qual é o endereço IP de origem de uma atividade.",
+    "pilulaIds": ["cs-03"]
+  },
+  {
+    "id": "aws-guardduty-investigacao",
+    "fonte": {
+      "titulo": "Investigate security events by using AWS CloudTrail Lake advanced queries (AWS Security Blog)",
+      "url": "https://aws.amazon.com/blogs/security/investigate-security-events-by-using-aws-cloudtrail-lake-advanced-queries/"
+    },
+    "tags": ["guardduty", "cloudtrail", "incidente", "monitoramento"],
+    "texto": "Em um exemplo de incidente, uma chave de acesso da AWS foi exposta por engano e usada por terceiros. A investigação começa quando o Amazon GuardDuty gera um alerta apontando que a atividade maliciosa veio daquela chave, e depois os logs do CloudTrail são consultados para ver o que foi feito com ela.",
+    "pilulaIds": ["cs-03"]
+  },
+  {
+    "id": "aws-credencial-comprometida-passos",
+    "fonte": {
+      "titulo": "How do I troubleshoot unusual resource activity in my AWS account?",
+      "url": "https://repost.aws/knowledge-center/troubleshoot-iam-account-activity"
+    },
+    "tags": ["incidente", "cloudtrail", "iam", "credenciais"],
+    "texto": "Se você percebe atividade inesperada na conta, suas credenciais podem estar comprometidas. Primeiro identifique o recurso afetado. Depois use o CloudTrail para localizar a chave de acesso e o nome de usuário do IAM envolvidos, desative as credenciais comprometidas e revise o histórico completo de eventos.",
+    "pilulaIds": ["cs-03"]
+  },
+  {
+    "id": "aws-credencial-exposta-resposta",
+    "fonte": {
+      "titulo": "How AWS responds to exposed credentials and how you can protect your account",
+      "url": "https://repost.aws/articles/ARoBXj63rWSt2Ww7XKlVV72g/how-aws-responds-to-exposed-credentials-and-how-you-can-protect-your-account"
+    },
+    "tags": ["incidente", "credenciais", "guardduty", "iniciante"],
+    "texto": "Ao suspeitar de exposição de credenciais, siga o guia de remediação da AWS: identificar os recursos, revisar a atividade não autorizada, trocar as credenciais e atualizar as práticas de segurança. O AWS Support pode ajudar no processo, e o AWS Security Incident Response é um serviço gerenciado para se preparar, responder e se recuperar de eventos de segurança.",
+    "pilulaIds": ["cs-03"]
+  }
+]

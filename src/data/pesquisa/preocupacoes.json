@@ -1,0 +1,58 @@
+[
+  {
+    "id": "jovem-nao-sou-boa",
+    "faixa": "18-34",
+    "rotulo": "Será que eu sou boa o bastante?",
+    "tags": ["iniciante", "conceito-cloud"],
+    "origem": "hipotese-mock"
+  },
+  {
+    "id": "jovem-medo-de-errar",
+    "faixa": "18-34",
+    "rotulo": "Tenho medo de errar no primeiro emprego",
+    "tags": ["iniciante", "responsabilidade-compartilhada"],
+    "origem": "hipotese-mock"
+  },
+  {
+    "id": "jovem-siglas",
+    "faixa": "18-34",
+    "rotulo": "Tanta sigla que eu me perco",
+    "tags": ["iaas", "paas", "saas", "conceito-cloud"],
+    "origem": "hipotese-mock"
+  },
+  {
+    "id": "jovem-todo-mundo-sabe-mais",
+    "faixa": "18-34",
+    "rotulo": "Sinto que todo mundo sabe mais do que eu",
+    "tags": ["iniciante", "regioes"],
+    "origem": "hipotese-mock"
+  },
+  {
+    "id": "madura-recomeco",
+    "faixa": "35-50",
+    "rotulo": "Estou recomeçando numa área nova",
+    "tags": ["conceito-cloud", "iniciante"],
+    "origem": "hipotese-mock"
+  },
+  {
+    "id": "madura-pouco-tempo",
+    "faixa": "35-50",
+    "rotulo": "Tenho pouco tempo para estudar",
+    "tags": ["iniciante", "pague-pelo-uso"],
+    "origem": "hipotese-mock"
+  },
+  {
+    "id": "madura-o-que-ja-sei",
+    "faixa": "35-50",
+    "rotulo": "Será que o que eu já sei vale na tecnologia?",
+    "tags": ["responsabilidade-compartilhada", "custo"],
+    "origem": "hipotese-mock"
+  },
+  {
+    "id": "madura-atrasada",
+    "faixa": "35-50",
+    "rotulo": "Sinto que estou atrasada",
+    "tags": ["conceito-cloud", "infraestrutura-global"],
+    "origem": "hipotese-mock"
+  }
+]
