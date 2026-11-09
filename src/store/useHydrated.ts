@@ -1,16 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useSyncExternalStore } from 'react';
 
 import { useAuthStore } from './useAuthStore';
 
+const assinar = (aviso: () => void) => useAuthStore.persist.onFinishHydration(aviso);
+const lerHidratado = () => useAuthStore.persist.hasHydrated();
+
 // Aguarda o AsyncStorage terminar de reidratar o store antes de renderizar rotas.
 export function useAuthHydrated(): boolean {
-  const [hidratado, setHidratado] = useState(useAuthStore.persist.hasHydrated());
-
-  useEffect(() => {
-    const cancelar = useAuthStore.persist.onFinishHydration(() => setHidratado(true));
-    setHidratado(useAuthStore.persist.hasHydrated());
-    return cancelar;
-  }, []);
-
-  return hidratado;
+  return useSyncExternalStore(assinar, lerHidratado, lerHidratado);
 }
