@@ -8,7 +8,10 @@ interface JornadaState {
   trilhaAtiva: TrilhaId | null;
   trilhaConfirmada: boolean;
   resultado: ResultadoRecomendacao | null;
+  // Resposta do check-in "o que pesa hoje?" (null = pulou ou ainda não respondeu).
+  preocupacaoId: string | null;
 
+  definirPreocupacao: (id: string | null) => void;
   definirResultado: (r: ResultadoRecomendacao) => void;
   escolherTrilha: (id: TrilhaId) => void;
   confirmarTrilha: () => void;
@@ -20,7 +23,9 @@ export const useJornadaStore = create<JornadaState>()(
       trilhaAtiva: null,
       trilhaConfirmada: false,
       resultado: null,
+      preocupacaoId: null,
 
+      definirPreocupacao: (id) => set({ preocupacaoId: id }),
       definirResultado: (r) =>
         set({ resultado: r, trilhaAtiva: r.trilhaRecomendada, trilhaConfirmada: false }),
       // Escolha direta ("já sei o que quero") não tem resultado de questionário.

@@ -7,4 +7,5 @@ export * from './Mascot';
 export * from './OptionCard';
 export * from './ProgressBar';
 export * from './Screen';
+export * from './SisterBalao';
 export * from './TextField';

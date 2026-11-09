@@ -1,8 +1,18 @@
 import { Redirect, useLocalSearchParams, useRouter } from 'expo-router';
-import { useMemo, useRef, useState } from 'react';
+import { useMemo, useState } from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
 
-import { AppText, Button, Flashcard, Mascot, ProgressBar, Screen, type MascotMood } from '@/components';
+import {
+  AppText,
+  Button,
+  Flashcard,
+  Mascot,
+  OptionCard,
+  ProgressBar,
+  Screen,
+  SisterBalao,
+  type MascotMood,
+} from '@/components';
 import { XP, xpDaPilula } from '@/lib/gamification';
 import {
   avancar,
@@ -14,13 +24,16 @@ import {
   terminou,
   type Sessao,
 } from '@/lib/sessao';
+import { PREOCUPACOES } from '@/lib/sisterApp';
 import { obterPilula, ROTULO_NIVEL } from '@/lib/trilhas';
+import { useSister } from '@/lib/useSister';
 import { useAuthStore } from '@/store/useAuthStore';
+import { useJornadaStore } from '@/store/useJornadaStore';
 import { useProgressoStore } from '@/store/useProgressoStore';
 import { colors, radius, spacing } from '@/theme';
 import type { QuestaoPilula } from '@/types/conteudo';
 
-type Etapa = 'conceito' | 'flashcards' | 'questoes';
+type Etapa = 'checkin' | 'conceito' | 'flashcards' | 'questoes';
 // Resposta dada na questão atual (null = ainda não respondeu).
 type Resposta = { escolhida: number; acertou: boolean; repeticao: boolean } | null;
 
@@ -32,9 +45,12 @@ export default function PlayerPilula() {
 
   const concluirPilula = useProgressoStore((s) => s.concluirPilula);
   const marcarPilulaConvidada = useAuthStore((s) => s.marcarPilulaConvidada);
-  const inicio = useRef(Date.now());
+  const [inicio] = useState(() => Date.now());
 
-  const [etapa, setEtapa] = useState<Etapa>('conceito');
+  const definirPreocupacao = useJornadaStore((s) => s.definirPreocupacao);
+  const { faixa, preocupacaoId, balao } = useSister(String(id));
+
+  const [etapa, setEtapa] = useState<Etapa>('checkin');
   const [iCard, setICard] = useState(0);
   const [virado, setVirado] = useState(false);
   const [sessao, setSessao] = useState<Sessao>(() =>
@@ -54,7 +70,7 @@ export default function PlayerPilula() {
   // Progresso geral: 1 conceito + flashcards + questões (a fila cresce com as repetições).
   const totalPassos = 1 + pilula.flashcards.length + sessao.fila.length;
   const passosFeitos =
-    etapa === 'conceito' ? 0 : etapa === 'flashcards' ? 1 + iCard : 1 + pilula.flashcards.length + sessao.pos;
+    etapa === 'checkin' || etapa === 'conceito' ? 0 : etapa === 'flashcards' ? 1 + iCard : 1 + pilula.flashcards.length + sessao.pos;
 
   // ---------- Flashcards ----------
   const proximoCard = () => {
@@ -93,10 +109,11 @@ export default function PlayerPilula() {
     router.replace({
       pathname: '/resultado-pilula',
       params: {
+        pilulaId: pilula.id,
         xp: String(xp),
         acertos: String(r.acertosPrimeira),
         total: String(r.total),
-        segundos: String(Math.round((Date.now() - inicio.current) / 1000)),
+        segundos: String(Math.round((Date.now() - inicio) / 1000)),
         perfeita: r.perfeita ? '1' : '0',
       },
     });
@@ -108,8 +125,36 @@ export default function PlayerPilula() {
     <Screen>
       <ProgressBar valor={passosFeitos / totalPassos} rotulo={`Progresso da pílula: ${passosFeitos} de ${totalPassos}`} />
 
+      {etapa === 'checkin' && (
+        <>
+          <SisterBalao mensagem="Antes de começar: o que pesa hoje? Escolha o que mais combina com você agora." />
+          <View style={styles.opcoes} accessibilityRole="radiogroup">
+            {PREOCUPACOES.filter((p) => p.faixa === faixa).map((p) => (
+              <OptionCard
+                key={p.id}
+                titulo={p.rotulo}
+                selecionado={preocupacaoId === p.id}
+                onPress={() => {
+                  definirPreocupacao(p.id);
+                  setEtapa('conceito');
+                }}
+              />
+            ))}
+          </View>
+          <Button
+            title="Prefiro pular"
+            variant="secondary"
+            onPress={() => {
+              definirPreocupacao(null);
+              setEtapa('conceito');
+            }}
+          />
+        </>
+      )}
+
       {etapa === 'conceito' && (
         <>
+          <SisterBalao {...balao('abertura')} />
           <View style={styles.chips}>
             <Chip texto={ROTULO_NIVEL[pilula.nivel]} />
             <Chip texto={`⏱️ ${pilula.duracaoMin} min`} />
@@ -190,6 +235,9 @@ export default function PlayerPilula() {
               onRever={() => setReverConteudo((v) => !v)}
               conceito={pilula.conceito.texto}
             />
+          )}
+          {resposta && !resposta.acertou && (
+            <SisterBalao {...balao('erro')} mood="pensativo" mascote={false} />
           )}
           {resposta && (
             <Button

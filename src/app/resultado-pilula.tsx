@@ -2,8 +2,9 @@ import { useLocalSearchParams, useRouter } from 'expo-router';
 import { StyleSheet, View } from 'react-native';
 import Animated, { ZoomIn } from 'react-native-reanimated';
 
-import { AppText, Button, Mascot, Screen } from '@/components';
+import { AppText, Button, Mascot, Screen, SisterBalao } from '@/components';
 import { convidadaPrecisaCriarConta } from '@/lib/convidada';
+import { useSister } from '@/lib/useSister';
 import { useAuthStore } from '@/store/useAuthStore';
 import { colors, radius, spacing } from '@/theme';
 
@@ -16,7 +17,15 @@ function formatarTempo(segundos: number): string {
 // 8. Resultado da pílula: XP ganho, acertos e tempo, com comemoração.
 export default function ResultadoPilula() {
   const router = useRouter();
-  const p = useLocalSearchParams<{ xp: string; acertos: string; total: string; segundos: string; perfeita: string }>();
+  const p = useLocalSearchParams<{
+    pilulaId: string;
+    xp: string;
+    acertos: string;
+    total: string;
+    segundos: string;
+    perfeita: string;
+  }>();
+  const { balao } = useSister(String(p.pilulaId ?? ''));
   const pedirConta = useAuthStore((s) => s.isGuest && convidadaPrecisaCriarConta(s.progressoConvidada));
 
   const xp = Number(p.xp ?? 0);
@@ -46,6 +55,8 @@ export default function ResultadoPilula() {
         <Stat rotulo="De primeira" valor={`${p.acertos}/${p.total}`} />
         <Stat rotulo="Tempo" valor={formatarTempo(Number(p.segundos ?? 0))} />
       </View>
+
+      <SisterBalao {...balao('fechamento')} mascote={false} />
 
       {pedirConta && (
         <View style={styles.conta}>
